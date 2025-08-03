@@ -1,0 +1,67 @@
+syntax = "proto3";
+
+enum OBDStandard {
+  OBD_STANDARD_UNDEFINED = 0;
+  OBD2_STANDARD_CARB = 1;
+  OBD2_STANDARD_EPA = 2;
+  OBD_AND_OBD2 = 3;
+  OBD_1 = 4;
+  NOT_OBD_COMPLIANT = 5;
+  EOBD = 6;
+  EOBD_AND_OBD2 = 7;
+  EOBD_AND_OBD = 8;
+  EOBD_OBD_OBD2 = 9;
+  JOBD = 10;
+  JOBD_AND_OBD2 = 11;
+  JOBD_AND_EOBD = 12;
+  JOBD_EOBD_OBD2 = 13;
+  EMD = 17;
+  EMD_ENHANCED = 18;
+  HEAVY_DUTY_OBD = 19;
+}
+
+message OxygenSensor {
+  float voltage = 1;
+  float shortTermFuelTrim = 2;
+}
+
+message OBD2Data {
+  bool isReady = 1;
+  optional OBDStandard obdStandard = 2;
+  optional float engineOilTemperature = 3;
+  optional float coolantTemperature = 4;
+  optional float engineRPM = 5;
+  optional float vehicleSpeed = 6;
+  optional float timingAdvance = 7;
+  optional float intakeAirTemperature = 8;
+  optional float throttlePosition = 9;
+  optional float relativeThrottlePosition = 10;
+  optional OxygenSensor oxygenSensor1 = 11;
+  optional OxygenSensor oxygenSensor2 = 12;
+  optional OxygenSensor oxygenSensor3 = 13;
+  optional OxygenSensor oxygenSensor4 = 14;
+  optional OxygenSensor oxygenSensor5 = 15;
+  optional OxygenSensor oxygenSensor6 = 16;
+  optional OxygenSensor oxygenSensor7 = 17;
+  optional OxygenSensor oxygenSensor8 = 18;
+  optional float engineRuntime = 19;
+  optional float fuelLevel = 20;
+  optional float evapVaporPressure = 21;
+  optional float absBarometricPressure = 22;
+  optional float catalystTemp11 = 23;
+  optional float catalystTemp21 = 24;
+  optional float catalystTemp12 = 25;
+  optional float catalystTemp22 = 26;
+  optional float controlModuleVoltage = 27;
+  optional float absoluteLoad = 28;
+  optional float ambientAirTemperature = 29;
+  optional int32 fuelType = 30;
+  optional float ethanolFuelPercentage = 31;
+  optional string vin = 32;
+  optional string errorCodes = 33;
+  optional string ecuName = 34;
+}
+
+message OBD2Command {
+  bool clearErrorCodes = 1;
+}
