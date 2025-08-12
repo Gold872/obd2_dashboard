@@ -812,7 +812,7 @@ class HomePage extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            '${data.catalystTemp11}°C',
+            '${data.catalystTemp11.round()}°C',
             style: theme.textTheme.displaySmall,
           ),
         ),
@@ -832,7 +832,7 @@ class HomePage extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            '${data.catalystTemp21}°C',
+            '${data.catalystTemp21.round()}°C',
             style: theme.textTheme.displaySmall,
           ),
         ),
@@ -852,7 +852,7 @@ class HomePage extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            '${data.catalystTemp12}°C',
+            '${data.catalystTemp12.round()}°C',
             style: theme.textTheme.displaySmall,
           ),
         ),
@@ -872,7 +872,7 @@ class HomePage extends StatelessWidget {
         FittedBox(
           fit: BoxFit.scaleDown,
           child: Text(
-            '${data.catalystTemp22}°C',
+            '${data.catalystTemp22.round()}°C',
             style: theme.textTheme.displaySmall,
           ),
         ),
